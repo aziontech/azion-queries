@@ -1,9 +1,9 @@
 query HttpCalculatedRequestsPerSecondOffloaded {
   httpMetrics(
-    limit: 1000, 
+    limit: 1000
     filter: {
       tsRange: {begin:"2023-02-22T16:00:00", end:"2023-02-22T18:00:00"}
-    },
+    }
     groupBy: [ts]
     orderBy: [ts_ASC]
   ) 

@@ -1,12 +1,12 @@
 query HttpCalculatedEdgeOffload {
   httpMetrics(
-    limit: 1000, 
+    limit: 1000
     filter: {
       tsRange: {begin:"2022-11-23T10:10:10", end:"2022-11-24T21:10:10"}
-    },
+    }
     groupBy: [ts]
     orderBy: [ts_ASC]
-          ) 
+  ) 
   {        
     ts
     offload
