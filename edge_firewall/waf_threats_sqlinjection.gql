@@ -1,0 +1,14 @@
+query HttpCalculatedWAFSQLAttack {
+  httpMetrics(
+    limit: 100,
+    filter: {
+      tsRange: {begin:"2023-03-14T16:48:00", end:"2023-03-14T17:47:00"}
+    },
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    wafRequestsSqlAttacks
+  }
+}

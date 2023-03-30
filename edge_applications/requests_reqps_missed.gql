@@ -1,0 +1,14 @@
+query HttpCalculatedMissedRequestsPerSecond {
+  httpMetrics(
+    limit: 1000, 
+    filter: {
+      tsRange: {begin:"2023-02-24T16:28:00", end:"2023-02-24T17:30:00"}
+    },
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+          ) 
+  {        
+    ts
+    missedRequestsPerSecond
+  }
+}

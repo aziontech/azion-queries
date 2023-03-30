@@ -1,0 +1,17 @@
+query HttpCalculatedRequests5xxStatusCode {
+  httpMetrics(
+    limit: 1000, 
+    filter: {
+      tsRange: {begin:"2023-03-06T12:00:00" end:"2023-03-06T13:00:00"}
+    },
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    requestsStatusCode5xx
+    requestsStatusCode500
+    requestsStatusCode502
+    requestsStatusCode503
+  }
+}

@@ -1,0 +1,14 @@
+query HttpCalculatedWAFOthersAttacks {
+  httpMetrics(
+    limit: 1000,
+    filter: {
+      tsRange: {begin:"2023-03-15T18:34:00", end:"2023-03-15T19:32:00"}
+    },
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+          ) 
+  {        
+    ts
+    wafRequestsOthersAttacks
+  }
+}
