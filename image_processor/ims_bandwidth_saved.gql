@@ -9,6 +9,6 @@ query httpBandwidthImagesSaved {
   )
   {
     ts
-          bandwidthImagesProcessedSavedData
+    bandwidthImagesProcessedSavedData
   }
 }

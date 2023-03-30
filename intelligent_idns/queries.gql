@@ -14,7 +14,7 @@ query IdnsTotalQueries {
     orderBy: [ts_ASC]
     ) 
   { 
-    ts,
+    ts
     sum
   }
 }

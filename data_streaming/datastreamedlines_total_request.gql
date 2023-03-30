@@ -1,10 +1,12 @@
 query DataStreamedLines {
   dataStreamedMetrics(
-    limit: 35, 
+    limit: 1000
     filter: {
       tsRange: {begin:"2022-12-18T10:10:10", end:"2022-12-20T10:10:10"}
     }
-    aggregate: {sum: streamedLines}
+    aggregate: {
+      sum: streamedLines
+    }
     groupBy: [ts]
     orderBy: [ts_ASC]
   ) 
