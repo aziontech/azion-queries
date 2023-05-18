@@ -1,9 +1,9 @@
 query Top10Host {
   httpMetrics(
-    limit: 10, 
+    limit: 10
     filter: {
       tsRange: {begin:"2023-03-23T18:25:00", end:"2023-03-23T19:25:00"}
-    },
+    }
     aggregate: {count: host}
     groupBy: [host]
     orderBy: [count_DESC]
