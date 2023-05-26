@@ -1,0 +1,19 @@
+# Not In Operator (field NOT IN (value1, value2))
+
+query StatusNotIN {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      statusNotIn: [301, 302, 403]
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    host
+    status
+    geolocRegionName
+    geolocCountryName
+  }
+}

@@ -1,0 +1,18 @@
+# Average Function - AVG(field)
+
+query AvgRequesTimeByHost {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+    }
+    aggregate: {avg:requestTime}
+    groupBy: [ts, host]
+    orderBy: [avg_DESC]
+  ) 
+  {        
+    ts
+    host
+    avg
+  }
+}

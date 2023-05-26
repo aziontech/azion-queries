@@ -1,0 +1,19 @@
+# In Operator (field IN (value1, value2))
+
+query GeolocRegionNameIN {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      geolocRegionNameIn: ["Rio de Janeiro", "Goias", "Parana"]
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    host
+    status
+    geolocRegionName
+    geolocCountryName
+  }
+}
