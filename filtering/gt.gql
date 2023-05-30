@@ -1,0 +1,19 @@
+# Greater Than Operator (field > value)
+
+query StatusGreaterThan300 {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      statusGt: 300
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    host
+    status
+    geolocRegionName
+    geolocCountryName
+  }
+}

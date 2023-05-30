@@ -1,0 +1,22 @@
+# ILike Operator - Case Insensitive (field ILIKE "value")
+
+query GeolocCountryNameAndRegionNameILike {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      geolocCountryNameIlike: "braz%"  # Any string that starts with the characters
+      geolocRegionNameIlike: "%ao paulo"  # # Any string that ends with the characters.
+      schemeIlike: "%HtP%"  # Any string that contains the characters.
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    host
+    status
+    geolocRegionName
+    geolocCountryName
+    scheme
+  }
+}

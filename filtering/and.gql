@@ -1,0 +1,22 @@
+# And Operator (WHERE conditional1 AND conditional2)
+
+query Status200AndStatusRange300To399 {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      and: {
+          status: 200
+          statusRange: {begin: 300, end: 399}
+      }
+    }
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    host
+    status
+    geolocRegionName
+    geolocCountryName
+  }
+}
