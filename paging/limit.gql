@@ -1,0 +1,17 @@
+# Limit Operator (LIMIT offset_value, limit_value)
+
+# The limit has a value of 10 if not specified. However, if it is specified, the value must be between 0 and 10,000.
+query GeolocCountryNameLimit50{
+  httpMetrics(
+    offset: 0
+    limit: 50  # In this example, we will retrieve data from row 0 to row 50.
+    filter: {
+      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+    }
+  ) 
+  {        
+    ts
+    host
+    geolocCountryName
+  }
+}
