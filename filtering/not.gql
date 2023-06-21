@@ -1,5 +1,7 @@
 # Not Operator (WHERE NOT conditional)
 
+# The two conditions below will be negated, both the status and the geolocCountryName, returning all information 
+# that does not have a status of 200 and that they aren`t from Brazil or the United States.
 query StatusAndGeolocCountryNameNOT {
   httpMetrics(
     limit: 1000
