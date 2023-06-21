@@ -7,7 +7,7 @@ query Top10Host {
     aggregate: {count: host}
     groupBy: [host]
     orderBy: [count_DESC]
-  	) 
+    ) 
   {	
     host
     count
