@@ -1,0 +1,525 @@
+query RequestsBlockedXTotalByHost {
+  httpMetrics(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [host]
+    orderBy: [wafRequestsBlocked_DESC]
+  )
+  {
+    host
+		wafRequestsBlocked
+    edgeRequestsTotal
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 11
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 2
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 33
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 12
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 2
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 20
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 3
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      }
+    ]
+  }
+}

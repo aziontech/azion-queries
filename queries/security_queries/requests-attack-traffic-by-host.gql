@@ -1,0 +1,729 @@
+query RequestsAttackTraffic {
+  httpMetrics(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      wafLearningEq: "0"
+      wafBlockEq: "1"
+    }
+    groupBy: [ts, host]
+    orderBy: [ts_ASC]
+  )
+  {
+    ts
+    host
+    dataTransferredIn
+    dataTransferredOut
+    dataTransferredTotal
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1761,
+        "dataTransferredOut": 915,
+        "dataTransferredTotal": 2676
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1340,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1553
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5039,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 5649
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3305,
+        "dataTransferredOut": 207914,
+        "dataTransferredTotal": 211219
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3526,
+        "dataTransferredOut": 87895,
+        "dataTransferredTotal": 91421
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4661,
+        "dataTransferredOut": 49375,
+        "dataTransferredTotal": 54036
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 56424,
+        "dataTransferredOut": 1093946,
+        "dataTransferredTotal": 1150370
+      },
+      {
+        "ts": "2023-09-20T10:12:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3331,
+        "dataTransferredOut": 52012,
+        "dataTransferredTotal": 55343
+      },
+      {
+        "ts": "2023-09-20T10:12:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 94801,
+        "dataTransferredOut": 700033,
+        "dataTransferredTotal": 794834
+      },
+      {
+        "ts": "2023-09-20T10:12:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1265,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1478
+      },
+      {
+        "ts": "2023-09-20T10:12:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 63366,
+        "dataTransferredOut": 1132767,
+        "dataTransferredTotal": 1196133
+      },
+      {
+        "ts": "2023-09-20T10:13:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 31123,
+        "dataTransferredOut": 562487,
+        "dataTransferredTotal": 593610
+      },
+      {
+        "ts": "2023-09-20T10:13:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1914,
+        "dataTransferredOut": 915,
+        "dataTransferredTotal": 2829
+      },
+      {
+        "ts": "2023-09-20T10:13:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 821,
+        "dataTransferredOut": 29301,
+        "dataTransferredTotal": 30122
+      },
+      {
+        "ts": "2023-09-20T10:13:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 960,
+        "dataTransferredOut": 32557,
+        "dataTransferredTotal": 33517
+      },
+      {
+        "ts": "2023-09-20T10:14:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 96304,
+        "dataTransferredOut": 1311118,
+        "dataTransferredTotal": 1407422
+      },
+      {
+        "ts": "2023-09-20T10:14:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3928,
+        "dataTransferredOut": 639,
+        "dataTransferredTotal": 4567
+      },
+      {
+        "ts": "2023-09-20T10:14:00Z",
+        "host": "madomain.com",
+        "dataTransferredIn": 4260,
+        "dataTransferredOut": 615,
+        "dataTransferredTotal": 4875
+      },
+      {
+        "ts": "2023-09-20T10:14:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2274,
+        "dataTransferredOut": 155421,
+        "dataTransferredTotal": 157695
+      },
+      {
+        "ts": "2023-09-20T10:14:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5572,
+        "dataTransferredOut": 61167,
+        "dataTransferredTotal": 66739
+      },
+      {
+        "ts": "2023-09-20T10:15:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 588,
+        "dataTransferredOut": 51806,
+        "dataTransferredTotal": 52394
+      },
+      {
+        "ts": "2023-09-20T10:15:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5406,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 6016
+      },
+      {
+        "ts": "2023-09-20T10:15:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 342057,
+        "dataTransferredOut": 2126127,
+        "dataTransferredTotal": 2468184
+      },
+      {
+        "ts": "2023-09-20T10:15:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 29770,
+        "dataTransferredOut": 1028399,
+        "dataTransferredTotal": 1058169
+      },
+      {
+        "ts": "2023-09-20T10:16:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 48232,
+        "dataTransferredOut": 845525,
+        "dataTransferredTotal": 893757
+      },
+      {
+        "ts": "2023-09-20T10:16:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 12641,
+        "dataTransferredOut": 1525,
+        "dataTransferredTotal": 14166
+      },
+      {
+        "ts": "2023-09-20T10:16:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5658,
+        "dataTransferredOut": 58392,
+        "dataTransferredTotal": 64050
+      },
+      {
+        "ts": "2023-09-20T10:16:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4110,
+        "dataTransferredOut": 1830,
+        "dataTransferredTotal": 5940
+      },
+      {
+        "ts": "2023-09-20T10:16:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1345,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1558
+      },
+      {
+        "ts": "2023-09-20T10:17:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 795,
+        "dataTransferredOut": 51807,
+        "dataTransferredTotal": 52602
+      },
+      {
+        "ts": "2023-09-20T10:17:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5186,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 5796
+      },
+      {
+        "ts": "2023-09-20T10:17:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2196,
+        "dataTransferredOut": 915,
+        "dataTransferredTotal": 3111
+      },
+      {
+        "ts": "2023-09-20T10:17:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 27970,
+        "dataTransferredOut": 517743,
+        "dataTransferredTotal": 545713
+      },
+      {
+        "ts": "2023-09-20T10:17:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 128579,
+        "dataTransferredOut": 758147,
+        "dataTransferredTotal": 886726
+      },
+      {
+        "ts": "2023-09-20T10:18:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4705,
+        "dataTransferredOut": 29306,
+        "dataTransferredTotal": 34011
+      },
+      {
+        "ts": "2023-09-20T10:18:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 60129,
+        "dataTransferredOut": 1314502,
+        "dataTransferredTotal": 1374631
+      },
+      {
+        "ts": "2023-09-20T10:18:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3468,
+        "dataTransferredOut": 426,
+        "dataTransferredTotal": 3894
+      },
+      {
+        "ts": "2023-09-20T10:18:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1131,
+        "dataTransferredOut": 99990,
+        "dataTransferredTotal": 101121
+      },
+      {
+        "ts": "2023-09-20T10:18:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1314,
+        "dataTransferredOut": 103615,
+        "dataTransferredTotal": 104929
+      },
+      {
+        "ts": "2023-09-20T10:19:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4938,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 5548
+      },
+      {
+        "ts": "2023-09-20T10:19:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2135,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 2348
+      },
+      {
+        "ts": "2023-09-20T10:19:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 7855,
+        "dataTransferredOut": 90506,
+        "dataTransferredTotal": 98361
+      },
+      {
+        "ts": "2023-09-20T10:19:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1930,
+        "dataTransferredOut": 51983,
+        "dataTransferredTotal": 53913
+      },
+      {
+        "ts": "2023-09-20T10:19:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 353212,
+        "dataTransferredOut": 2649481,
+        "dataTransferredTotal": 3002693
+      },
+      {
+        "ts": "2023-09-20T10:20:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 25982,
+        "dataTransferredOut": 637263,
+        "dataTransferredTotal": 663245
+      },
+      {
+        "ts": "2023-09-20T10:20:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1300,
+        "dataTransferredOut": 103612,
+        "dataTransferredTotal": 104912
+      },
+      {
+        "ts": "2023-09-20T10:20:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4545,
+        "dataTransferredOut": 52012,
+        "dataTransferredTotal": 56557
+      },
+      {
+        "ts": "2023-09-20T10:20:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3962,
+        "dataTransferredOut": 795,
+        "dataTransferredTotal": 4757
+      },
+      {
+        "ts": "2023-09-20T10:20:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2135,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 2348
+      },
+      {
+        "ts": "2023-09-20T10:21:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 622,
+        "dataTransferredOut": 51806,
+        "dataTransferredTotal": 52428
+      },
+      {
+        "ts": "2023-09-20T10:21:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 55099,
+        "dataTransferredOut": 622164,
+        "dataTransferredTotal": 677263
+      },
+      {
+        "ts": "2023-09-20T10:21:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 44099,
+        "dataTransferredOut": 7665,
+        "dataTransferredTotal": 51764
+      },
+      {
+        "ts": "2023-09-20T10:21:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 123630,
+        "dataTransferredOut": 728307,
+        "dataTransferredTotal": 851937
+      },
+      {
+        "ts": "2023-09-20T10:21:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 21784,
+        "dataTransferredOut": 696165,
+        "dataTransferredTotal": 717949
+      },
+      {
+        "ts": "2023-09-20T10:22:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 70425,
+        "dataTransferredOut": 1176543,
+        "dataTransferredTotal": 1246968
+      },
+      {
+        "ts": "2023-09-20T10:22:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2693,
+        "dataTransferredOut": 31914,
+        "dataTransferredTotal": 34607
+      },
+      {
+        "ts": "2023-09-20T10:22:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3601,
+        "dataTransferredOut": 426,
+        "dataTransferredTotal": 4027
+      },
+      {
+        "ts": "2023-09-20T10:22:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 8706,
+        "dataTransferredOut": 93078,
+        "dataTransferredTotal": 101784
+      },
+      {
+        "ts": "2023-09-20T10:22:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5142,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 5752
+      },
+      {
+        "ts": "2023-09-20T10:22:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1914,
+        "dataTransferredOut": 915,
+        "dataTransferredTotal": 2829
+      },
+      {
+        "ts": "2023-09-20T10:23:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 9480,
+        "dataTransferredOut": 168189,
+        "dataTransferredTotal": 177669
+      },
+      {
+        "ts": "2023-09-20T10:23:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 131800,
+        "dataTransferredOut": 1487081,
+        "dataTransferredTotal": 1618881
+      },
+      {
+        "ts": "2023-09-20T10:23:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1348,
+        "dataTransferredOut": 103613,
+        "dataTransferredTotal": 104961
+      },
+      {
+        "ts": "2023-09-20T10:23:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4795,
+        "dataTransferredOut": 49376,
+        "dataTransferredTotal": 54171
+      },
+      {
+        "ts": "2023-09-20T10:23:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1340,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1553
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2219,
+        "dataTransferredOut": 616,
+        "dataTransferredTotal": 2835
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 363195,
+        "dataTransferredOut": 3689910,
+        "dataTransferredTotal": 4053105
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2935,
+        "dataTransferredOut": 31908,
+        "dataTransferredTotal": 34843
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1914,
+        "dataTransferredOut": 915,
+        "dataTransferredTotal": 2829
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4924,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 5534
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1260,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1473
+      },
+      {
+        "ts": "2023-09-20T10:24:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 21525,
+        "dataTransferredOut": 754921,
+        "dataTransferredTotal": 776446
+      },
+      {
+        "ts": "2023-09-20T10:25:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 166814,
+        "dataTransferredOut": 1722812,
+        "dataTransferredTotal": 1889626
+      },
+      {
+        "ts": "2023-09-20T10:25:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 109490,
+        "dataTransferredOut": 1167738,
+        "dataTransferredTotal": 1277228
+      },
+      {
+        "ts": "2023-09-20T10:25:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4392,
+        "dataTransferredOut": 1830,
+        "dataTransferredTotal": 6222
+      },
+      {
+        "ts": "2023-09-20T10:25:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 12062,
+        "dataTransferredOut": 90458,
+        "dataTransferredTotal": 102520
+      },
+      {
+        "ts": "2023-09-20T10:26:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 33342,
+        "dataTransferredOut": 1076555,
+        "dataTransferredTotal": 1109897
+      },
+      {
+        "ts": "2023-09-20T10:26:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1345,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1558
+      },
+      {
+        "ts": "2023-09-20T10:26:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 380,
+        "dataTransferredOut": 29549,
+        "dataTransferredTotal": 29929
+      },
+      {
+        "ts": "2023-09-20T10:27:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 7252,
+        "dataTransferredOut": 58989,
+        "dataTransferredTotal": 66241
+      },
+      {
+        "ts": "2023-09-20T10:27:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3937,
+        "dataTransferredOut": 152943,
+        "dataTransferredTotal": 156880
+      },
+      {
+        "ts": "2023-09-20T10:27:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 31057,
+        "dataTransferredOut": 703575,
+        "dataTransferredTotal": 734632
+      },
+      {
+        "ts": "2023-09-20T10:28:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2683,
+        "dataTransferredOut": 426,
+        "dataTransferredTotal": 3109
+      },
+      {
+        "ts": "2023-09-20T10:28:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 145208,
+        "dataTransferredOut": 1475492,
+        "dataTransferredTotal": 1620700
+      },
+      {
+        "ts": "2023-09-20T10:28:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 129600,
+        "dataTransferredOut": 905386,
+        "dataTransferredTotal": 1034986
+      },
+      {
+        "ts": "2023-09-20T10:28:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 100940,
+        "dataTransferredOut": 1172746,
+        "dataTransferredTotal": 1273686
+      },
+      {
+        "ts": "2023-09-20T10:28:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2318,
+        "dataTransferredOut": 49341,
+        "dataTransferredTotal": 51659
+      },
+      {
+        "ts": "2023-09-20T10:29:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 54952,
+        "dataTransferredOut": 877892,
+        "dataTransferredTotal": 932844
+      },
+      {
+        "ts": "2023-09-20T10:29:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4797,
+        "dataTransferredOut": 49345,
+        "dataTransferredTotal": 54142
+      },
+      {
+        "ts": "2023-09-20T10:29:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 104963,
+        "dataTransferredOut": 1243573,
+        "dataTransferredTotal": 1348536
+      },
+      {
+        "ts": "2023-09-20T10:29:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 2530,
+        "dataTransferredOut": 426,
+        "dataTransferredTotal": 2956
+      },
+      {
+        "ts": "2023-09-20T10:29:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 116002,
+        "dataTransferredOut": 756260,
+        "dataTransferredTotal": 872262
+      },
+      {
+        "ts": "2023-09-20T10:29:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 28568,
+        "dataTransferredOut": 4231,
+        "dataTransferredTotal": 32799
+      },
+      {
+        "ts": "2023-09-20T10:30:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 4518,
+        "dataTransferredOut": 639,
+        "dataTransferredTotal": 5157
+      },
+      {
+        "ts": "2023-09-20T10:30:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 10440,
+        "dataTransferredOut": 90545,
+        "dataTransferredTotal": 100985
+      },
+      {
+        "ts": "2023-09-20T10:30:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 117312,
+        "dataTransferredOut": 1241291,
+        "dataTransferredTotal": 1358603
+      },
+      {
+        "ts": "2023-09-20T10:30:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 34311,
+        "dataTransferredOut": 654246,
+        "dataTransferredTotal": 688557
+      },
+      {
+        "ts": "2023-09-20T10:30:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 590,
+        "dataTransferredOut": 31911,
+        "dataTransferredTotal": 32501
+      },
+      {
+        "ts": "2023-09-20T10:31:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 6024,
+        "dataTransferredOut": 2745,
+        "dataTransferredTotal": 8769
+      },
+      {
+        "ts": "2023-09-20T10:31:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 168003,
+        "dataTransferredOut": 1632427,
+        "dataTransferredTotal": 1800430
+      }
+    ]
+  }
+}

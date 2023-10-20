@@ -1,0 +1,64 @@
+query Top10IPs {
+  httpEvents(
+    limit: 10
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {count: remoteAddress}
+    groupBy: [remoteAddress]
+    orderBy: [count_DESC]
+  ) {
+    remoteAddress
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 45762561
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 6009760
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 5518854
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 3942507
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 3500580
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 2702862
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 2470692
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 1931222
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 1824362
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 1610541
+      }
+    ]
+  }
+}

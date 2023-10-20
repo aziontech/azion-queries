@@ -4,7 +4,7 @@ query GeolocRegionNameEquals {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
       geolocRegionNameEq: "Rio Grande do Sul"
     }
     orderBy: [ts_ASC]

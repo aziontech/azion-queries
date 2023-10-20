@@ -1,0 +1,727 @@
+query TopIPsRangeByMethod {
+  httpMetrics(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [remoteAddressClass]
+    orderBy: [requestsHttpMethodGet_DESC, requestsHttpMethodPost_DESC, requestsHttpMethodHead_DESC, requestsHttpMethodOthers_DESC]
+  )
+  {
+    remoteAddressClass
+		requestsHttpMethodGet
+    requestsHttpMethodPost
+    requestsHttpMethodHead
+    requestsHttpMethodOthers
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "remoteAddressClass": "170.000.000.0/21",
+        "requestsHttpMethodGet": 7307085,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 2661
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 2678799,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 181
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 1593530,
+        "requestsHttpMethodPost": 166,
+        "requestsHttpMethodHead": 12,
+        "requestsHttpMethodOthers": 174
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/21",
+        "requestsHttpMethodGet": 1253677,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 1492
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 1112659,
+        "requestsHttpMethodPost": 105367,
+        "requestsHttpMethodHead": 6350,
+        "requestsHttpMethodOthers": 42924
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 1070257,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 17
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 937898,
+        "requestsHttpMethodPost": 171,
+        "requestsHttpMethodHead": 23,
+        "requestsHttpMethodOthers": 661
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 905632,
+        "requestsHttpMethodPost": 19627,
+        "requestsHttpMethodHead": 440,
+        "requestsHttpMethodOthers": 7908
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 875956,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 24
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 843567,
+        "requestsHttpMethodPost": 49836,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 3058
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 745830,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 736945,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 79,
+        "requestsHttpMethodOthers": 229
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/23",
+        "requestsHttpMethodGet": 725720,
+        "requestsHttpMethodPost": 5,
+        "requestsHttpMethodHead": 1571,
+        "requestsHttpMethodOthers": 25354
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 713315,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 24
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 708228,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 433,
+        "requestsHttpMethodOthers": 5280
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 697875,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/13",
+        "requestsHttpMethodGet": 680540,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 30,
+        "requestsHttpMethodOthers": 9408
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 672488,
+        "requestsHttpMethodPost": 28,
+        "requestsHttpMethodHead": 3,
+        "requestsHttpMethodOthers": 15
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/18",
+        "requestsHttpMethodGet": 660804,
+        "requestsHttpMethodPost": 2118,
+        "requestsHttpMethodHead": 210,
+        "requestsHttpMethodOthers": 10833
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 584495,
+        "requestsHttpMethodPost": 330,
+        "requestsHttpMethodHead": 926,
+        "requestsHttpMethodOthers": 6422
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 564048,
+        "requestsHttpMethodPost": 34,
+        "requestsHttpMethodHead": 9,
+        "requestsHttpMethodOthers": 157
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 530703,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/20",
+        "requestsHttpMethodGet": 396019,
+        "requestsHttpMethodPost": 602,
+        "requestsHttpMethodHead": 1765,
+        "requestsHttpMethodOthers": 7975
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/23",
+        "requestsHttpMethodGet": 379284,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 25544
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 374069,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 24
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 363353,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 644
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 357430,
+        "requestsHttpMethodPost": 65,
+        "requestsHttpMethodHead": 6,
+        "requestsHttpMethodOthers": 3
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/23",
+        "requestsHttpMethodGet": 356742,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 356704,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 355708,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 1,
+        "requestsHttpMethodOthers": 97
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 336118,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 2,
+        "requestsHttpMethodOthers": 4
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/11",
+        "requestsHttpMethodGet": 322062,
+        "requestsHttpMethodPost": 39318,
+        "requestsHttpMethodHead": 434,
+        "requestsHttpMethodOthers": 9612
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 295457,
+        "requestsHttpMethodPost": 687,
+        "requestsHttpMethodHead": 776,
+        "requestsHttpMethodOthers": 23194
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/23",
+        "requestsHttpMethodGet": 264877,
+        "requestsHttpMethodPost": 192,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 194
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 245958,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 124,
+        "requestsHttpMethodOthers": 4
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/11",
+        "requestsHttpMethodGet": 243435,
+        "requestsHttpMethodPost": 2931,
+        "requestsHttpMethodHead": 292,
+        "requestsHttpMethodOthers": 7935
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/23",
+        "requestsHttpMethodGet": 220833,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/21",
+        "requestsHttpMethodGet": 210044,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 7
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 205681,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 196088,
+        "requestsHttpMethodPost": 1,
+        "requestsHttpMethodHead": 3,
+        "requestsHttpMethodOthers": 86
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 195551,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 5,
+        "requestsHttpMethodOthers": 229
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 194215,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 11225
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 192850,
+        "requestsHttpMethodPost": 33,
+        "requestsHttpMethodHead": 3,
+        "requestsHttpMethodOthers": 229
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 189060,
+        "requestsHttpMethodPost": 6,
+        "requestsHttpMethodHead": 6,
+        "requestsHttpMethodOthers": 150
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 187303,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 185328,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 113
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 184714,
+        "requestsHttpMethodPost": 34,
+        "requestsHttpMethodHead": 32,
+        "requestsHttpMethodOthers": 39
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 184349,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 2,
+        "requestsHttpMethodOthers": 55
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 183270,
+        "requestsHttpMethodPost": 1,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 1
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 183140,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 40
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 182668,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 12,
+        "requestsHttpMethodOthers": 44
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 181996,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 38
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 181861,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 1,
+        "requestsHttpMethodOthers": 37
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 181255,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 180957,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 7
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/18",
+        "requestsHttpMethodGet": 180816,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 7
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 180311,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 4
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/20",
+        "requestsHttpMethodGet": 179119,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 2,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 178946,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 178939,
+        "requestsHttpMethodPost": 36,
+        "requestsHttpMethodHead": 8,
+        "requestsHttpMethodOthers": 22032
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 178727,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 178700,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/20",
+        "requestsHttpMethodGet": 178692,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/20",
+        "requestsHttpMethodGet": 178463,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 15
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 178463,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/13",
+        "requestsHttpMethodGet": 178453,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 76
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 178390,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 12
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 178334,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/18",
+        "requestsHttpMethodGet": 178334,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 177966,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 175507,
+        "requestsHttpMethodPost": 20367,
+        "requestsHttpMethodHead": 364,
+        "requestsHttpMethodOthers": 1272
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 167317,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 134209,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 132015,
+        "requestsHttpMethodPost": 57,
+        "requestsHttpMethodHead": 48,
+        "requestsHttpMethodOthers": 2589
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 131587,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/21",
+        "requestsHttpMethodGet": 129214,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/12",
+        "requestsHttpMethodGet": 124788,
+        "requestsHttpMethodPost": 18,
+        "requestsHttpMethodHead": 396,
+        "requestsHttpMethodOthers": 3267
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/19",
+        "requestsHttpMethodGet": 121940,
+        "requestsHttpMethodPost": 142,
+        "requestsHttpMethodHead": 397,
+        "requestsHttpMethodOthers": 1596
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 115338,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 1
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 113914,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 101786,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/13",
+        "requestsHttpMethodGet": 91355,
+        "requestsHttpMethodPost": 36,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 6832
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 90788,
+        "requestsHttpMethodPost": 9,
+        "requestsHttpMethodHead": 6,
+        "requestsHttpMethodOthers": 1191
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 90344,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 88304,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 113
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 87688,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 361
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/13",
+        "requestsHttpMethodGet": 86900,
+        "requestsHttpMethodPost": 162,
+        "requestsHttpMethodHead": 55,
+        "requestsHttpMethodOthers": 1849
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 86529,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 348
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 86485,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 16
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 84412,
+        "requestsHttpMethodPost": 2,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 5
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/13",
+        "requestsHttpMethodGet": 84395,
+        "requestsHttpMethodPost": 9,
+        "requestsHttpMethodHead": 15,
+        "requestsHttpMethodOthers": 106
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/24",
+        "requestsHttpMethodGet": 82274,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 82030,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 14
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 81951,
+        "requestsHttpMethodPost": 28,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 1
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 78384,
+        "requestsHttpMethodPost": 2638,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 647
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/14",
+        "requestsHttpMethodGet": 77074,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 19
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/18",
+        "requestsHttpMethodGet": 76709,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/16",
+        "requestsHttpMethodGet": 75053,
+        "requestsHttpMethodPost": 74,
+        "requestsHttpMethodHead": 68,
+        "requestsHttpMethodOthers": 2182
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/22",
+        "requestsHttpMethodGet": 73759,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/17",
+        "requestsHttpMethodGet": 73397,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 0
+      }
+    ]
+  }
+}

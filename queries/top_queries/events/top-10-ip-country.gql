@@ -1,0 +1,98 @@
+query EventsTopIPCountryCGNAT {
+  httpEvents(
+    limit: 10
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {count: remoteAddress}
+    groupBy: [remoteAddress, geolocAsn, geolocCountryName, source]
+    orderBy: [count_DESC]
+    )
+  {
+    remoteAddress
+    geolocAsn
+    geolocCountryName
+    source
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS8075 MICROSOFT-CORP-MSN-AS-BLOCK",
+        "geolocCountryName": "United States",
+        "source": "edg-iad-eqn004p",
+        "count": 2564629
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS8075 MICROSOFT-CORP-MSN-AS-BLOCK",
+        "geolocCountryName": "United States",
+        "source": "edg-iad-eqn003p",
+        "count": 2509139
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS8075 MICROSOFT-CORP-MSN-AS-BLOCK",
+        "geolocCountryName": "United States",
+        "source": "edg-ewr-bso001p",
+        "count": 627689
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS396982 GOOGLE-CLOUD-PLATFORM",
+        "geolocCountryName": "Brazil",
+        "source": "edg-iad-eqn003p",
+        "count": 356751
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS396982 GOOGLE-CLOUD-PLATFORM",
+        "geolocCountryName": "Brazil",
+        "source": "edg-iad-eqn004p",
+        "count": 355470
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS14618 AMAZON-AES",
+        "geolocCountryName": "United States",
+        "source": "edg-atl-bso001p",
+        "count": 284749
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS396982 GOOGLE-CLOUD-PLATFORM",
+        "geolocCountryName": "Brazil",
+        "source": "edg-iad-eqn003p",
+        "count": 242058
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS396982 GOOGLE-CLOUD-PLATFORM",
+        "geolocCountryName": "Brazil",
+        "source": "edg-iad-eqn004p",
+        "count": 240113
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS396982 GOOGLE-CLOUD-PLATFORM",
+        "geolocCountryName": "Brazil",
+        "source": "edg-iad-eqn004p",
+        "count": 235282
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "geolocAsn": "AS396982 GOOGLE-CLOUD-PLATFORM",
+        "geolocCountryName": "Brazil",
+        "source": "edg-iad-eqn004p",
+        "count": 233424
+      }
+    ]
+  }
+}

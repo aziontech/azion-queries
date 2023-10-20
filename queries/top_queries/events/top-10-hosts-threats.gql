@@ -1,0 +1,64 @@
+query Top10HostsThreats {
+  httpEvents(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      # threats
+      wafLearningEq: "1"
+      wafBlockEq: "1"
+    }
+    aggregate: {count: rows} 
+    groupBy: [host]
+    orderBy: [count_DESC]
+  )
+  {
+    host
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "host": "adomain.com",
+        "count": 813400
+      },
+      {
+        "host": "adomain.com",
+        "count": 242916
+      },
+      {
+        "host": "adomain.com",
+        "count": 40256
+      },
+      {
+        "host": "adomain.com",
+        "count": 11970
+      },
+      {
+        "host": "adomain.com",
+        "count": 9102
+      },
+      {
+        "host": "adomain.com",
+        "count": 1142
+      },
+      {
+        "host": "adomain.com",
+        "count": 912
+      },
+      {
+        "host": "adomain.com",
+        "count": 577
+      },
+      {
+        "host": "adomain.com",
+        "count": 181
+      }
+    ]
+  }
+}

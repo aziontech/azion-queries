@@ -1,0 +1,75 @@
+query TotalAttacksWAFAndTotalBytesSentByHost {
+  httpMetrics(
+    limit: 10,
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {sum: bytesSent},
+    groupBy: [host]
+    orderBy: [wafRequestsThreat_DESC]
+  )
+  {
+    host
+    wafRequestsThreat
+    bytes: sum
+  }
+}
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 9093896,
+        "bytes": 118562658876
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 7676210,
+        "bytes": 27744691371
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 754767,
+        "bytes": 161574459469
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 383461,
+        "bytes": 3628591934
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 374418,
+        "bytes": 3196861431
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 94934,
+        "bytes": 23464498632
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 23114,
+        "bytes": 199542949
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 20612,
+        "bytes": 5112651104
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 5093,
+        "bytes": 159001034
+      },
+      {
+        "host": "adomain.com",
+        "wafRequestsThreat": 2645,
+        "bytes": 8434122785
+      }
+    ]
+  }
+}

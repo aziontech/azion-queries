@@ -1,0 +1,631 @@
+query BandwidthAndBlockedRequestsLocation {
+  httpMetrics(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      # blockeds
+      wafLearningEq: "0"
+      wafBlockEq: "1"
+      # naxsiAttackActionEq: "$BLOCK"
+    }
+    aggregate: {count: rows} 
+    groupBy: [geolocCountryName, geolocRegionName]
+    orderBy: [count_DESC]
+  )
+  {
+    geolocCountryName
+    geolocRegionName
+    bandwidthTotal
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Sao Paulo",
+        "bandwidthTotal": 168502607.7333336,
+        "count": 17067
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Minas Gerais",
+        "bandwidthTotal": 55766709.99999997,
+        "count": 6623
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Rio de Janeiro",
+        "bandwidthTotal": 63319467.466666654,
+        "count": 5166
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Rio Grande do Sul",
+        "bandwidthTotal": 45501784.66666666,
+        "count": 4698
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Bahia",
+        "bandwidthTotal": 27374068.533333324,
+        "count": 3999
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Parana",
+        "bandwidthTotal": 28418150.26666666,
+        "count": 3531
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Pernambuco",
+        "bandwidthTotal": 22419471.066666666,
+        "count": 3142
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Ceara",
+        "bandwidthTotal": 17147993.333333336,
+        "count": 2504
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 58185175.466666736,
+        "count": 2353
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Santa Catarina",
+        "bandwidthTotal": 18969307.199999996,
+        "count": 2191
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Goias",
+        "bandwidthTotal": 12658415.333333332,
+        "count": 1623
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Para",
+        "bandwidthTotal": 7447361.6000000015,
+        "count": 1492
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Rio Grande do Norte",
+        "bandwidthTotal": 6414899.600000001,
+        "count": 1250
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Federal District",
+        "bandwidthTotal": 11839211.733333334,
+        "count": 1215
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Maranhao",
+        "bandwidthTotal": 7091537.866666665,
+        "count": 1190
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Alagoas",
+        "bandwidthTotal": 8520894.4,
+        "count": 1130
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Paraíba",
+        "bandwidthTotal": 7925513.733333332,
+        "count": 1003
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Georgia",
+        "bandwidthTotal": 30430912.00000003,
+        "count": 966
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Mato Grosso",
+        "bandwidthTotal": 7272953.866666667,
+        "count": 755
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Mato Grosso do Sul",
+        "bandwidthTotal": 6238377.733333334,
+        "count": 751
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Piaui",
+        "bandwidthTotal": 4977539.333333334,
+        "count": 734
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Espirito Santo",
+        "bandwidthTotal": 6162821.2,
+        "count": 714
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Sergipe",
+        "bandwidthTotal": 5604060.266666667,
+        "count": 642
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "South Carolina",
+        "bandwidthTotal": 55090.26666666665,
+        "count": 554
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 1374826.7999999998,
+        "count": 215
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Amazonas",
+        "bandwidthTotal": 2513727.6,
+        "count": 201
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Rondonia",
+        "bandwidthTotal": 800004.6666666667,
+        "count": 156
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Tocantins",
+        "bandwidthTotal": 1794655.0666666667,
+        "count": 141
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Iowa",
+        "bandwidthTotal": 200696.5333333333,
+        "count": 92
+      },
+      {
+        "geolocCountryName": "Finland",
+        "geolocRegionName": "Uusimaa",
+        "bandwidthTotal": 4739.466666666667,
+        "count": 66
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "North Carolina",
+        "bandwidthTotal": 380038.5333333333,
+        "count": 60
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Virginia",
+        "bandwidthTotal": 163460.1333333333,
+        "count": 57
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "California",
+        "bandwidthTotal": 33159048,
+        "count": 54
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Acre",
+        "bandwidthTotal": 212326.8,
+        "count": 53
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "New Jersey",
+        "bandwidthTotal": 360523.06666666665,
+        "count": 53
+      },
+      {
+        "geolocCountryName": "Pakistan",
+        "geolocRegionName": "Sindh",
+        "bandwidthTotal": 367896.6666666666,
+        "count": 52
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Amapa",
+        "bandwidthTotal": 248119.2,
+        "count": 51
+      },
+      {
+        "geolocCountryName": "Singapore",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 107955.19999999998,
+        "count": 49
+      },
+      {
+        "geolocCountryName": "Honduras",
+        "geolocRegionName": "Santa Bárbara Department",
+        "bandwidthTotal": 112072.13333333333,
+        "count": 41
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Oregon",
+        "bandwidthTotal": 125871.86666666665,
+        "count": 36
+      },
+      {
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Roraima",
+        "bandwidthTotal": 135078.6666666667,
+        "count": 29
+      },
+      {
+        "geolocCountryName": "India",
+        "geolocRegionName": "Maharashtra",
+        "bandwidthTotal": 2114.5333333333333,
+        "count": 23
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Ohio",
+        "bandwidthTotal": 101661.06666666665,
+        "count": 22
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Maryland",
+        "bandwidthTotal": 1113507.0666666664,
+        "count": 18
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Florida",
+        "bandwidthTotal": 56738.933333333334,
+        "count": 13
+      },
+      {
+        "geolocCountryName": "Canada",
+        "geolocRegionName": "Ontario",
+        "bandwidthTotal": 26381.86666666667,
+        "count": 13
+      },
+      {
+        "geolocCountryName": "Russia",
+        "geolocRegionName": "Moscow",
+        "bandwidthTotal": 51071.066666666666,
+        "count": 13
+      },
+      {
+        "geolocCountryName": "United Kingdom",
+        "geolocRegionName": "England",
+        "bandwidthTotal": 39253.733333333344,
+        "count": 13
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "New York",
+        "bandwidthTotal": 47710.26666666666,
+        "count": 10
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Washington",
+        "bandwidthTotal": 17282.533333333333,
+        "count": 9
+      },
+      {
+        "geolocCountryName": "Argentina",
+        "geolocRegionName": "Buenos Aires",
+        "bandwidthTotal": 55465.600000000006,
+        "count": 8
+      },
+      {
+        "geolocCountryName": "Croatia",
+        "geolocRegionName": "City of Zagreb",
+        "bandwidthTotal": 1952,
+        "count": 8
+      },
+      {
+        "geolocCountryName": "Russia",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 568.4,
+        "count": 8
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Illinois",
+        "bandwidthTotal": 22956.266666666666,
+        "count": 7
+      },
+      {
+        "geolocCountryName": "Canada",
+        "geolocRegionName": "Quebec",
+        "bandwidthTotal": 35369.46666666667,
+        "count": 7
+      },
+      {
+        "geolocCountryName": "Italy",
+        "geolocRegionName": "Lombardy",
+        "bandwidthTotal": 24512.13333333333,
+        "count": 6
+      },
+      {
+        "geolocCountryName": "-",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 27527.2,
+        "count": 6
+      },
+      {
+        "geolocCountryName": "France",
+        "geolocRegionName": "Île-de-France",
+        "bandwidthTotal": 46811.866666666676,
+        "count": 6
+      },
+      {
+        "geolocCountryName": "Australia",
+        "geolocRegionName": "Australian Capital Territory",
+        "bandwidthTotal": 12125.199999999999,
+        "count": 6
+      },
+      {
+        "geolocCountryName": "Portugal",
+        "geolocRegionName": "Lisbon",
+        "bandwidthTotal": 19402.533333333333,
+        "count": 6
+      },
+      {
+        "geolocCountryName": "Argentina",
+        "geolocRegionName": "Buenos Aires F.D.",
+        "bandwidthTotal": 23630.13333333333,
+        "count": 5
+      },
+      {
+        "geolocCountryName": "Paraguay",
+        "geolocRegionName": "Departamento Central",
+        "bandwidthTotal": 46830.666666666664,
+        "count": 5
+      },
+      {
+        "geolocCountryName": "China",
+        "geolocRegionName": "Guangdong",
+        "bandwidthTotal": 13666,
+        "count": 5
+      },
+      {
+        "geolocCountryName": "Algeria",
+        "geolocRegionName": "Algiers",
+        "bandwidthTotal": 16961.733333333334,
+        "count": 5
+      },
+      {
+        "geolocCountryName": "Uruguay",
+        "geolocRegionName": "Montevideo Department",
+        "bandwidthTotal": 25561.86666666667,
+        "count": 5
+      },
+      {
+        "geolocCountryName": "United Kingdom",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 291196.5333333333,
+        "count": 5
+      },
+      {
+        "geolocCountryName": "Germany",
+        "geolocRegionName": "North Rhine-Westphalia",
+        "bandwidthTotal": 18880.666666666668,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Arizona",
+        "bandwidthTotal": 3016.266666666667,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "Portugal",
+        "geolocRegionName": "Santarém",
+        "bandwidthTotal": 7176.933333333334,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "Japan",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 14745.6,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "Ireland",
+        "geolocRegionName": "Leinster",
+        "bandwidthTotal": 8425.6,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "Japan",
+        "geolocRegionName": "Tokyo",
+        "bandwidthTotal": 17478.4,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Massachusetts",
+        "bandwidthTotal": 15968,
+        "count": 4
+      },
+      {
+        "geolocCountryName": "Germany",
+        "geolocRegionName": "Land Berlin",
+        "bandwidthTotal": 12159.466666666667,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Germany",
+        "geolocRegionName": "Baden-Wurttemberg",
+        "bandwidthTotal": 12034.666666666666,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Texas",
+        "bandwidthTotal": 12840.400000000001,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "France",
+        "geolocRegionName": "Provence-Alpes-Côte d'Azur",
+        "bandwidthTotal": 17060.4,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "China",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 6825.866666666667,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Paraguay",
+        "geolocRegionName": "Departamento del Alto Parana",
+        "bandwidthTotal": 12766.933333333334,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Germany",
+        "geolocRegionName": "Bavaria",
+        "bandwidthTotal": 930.8,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Spain",
+        "geolocRegionName": "Catalonia",
+        "bandwidthTotal": 8299.466666666667,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Portugal",
+        "geolocRegionName": "Porto",
+        "bandwidthTotal": 6411.6,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "South Korea",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 13390,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Czechia",
+        "geolocRegionName": "Prague",
+        "bandwidthTotal": 4117.733333333334,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Chile",
+        "geolocRegionName": "Region del Biobio",
+        "bandwidthTotal": 85.19999999999999,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "South Africa",
+        "geolocRegionName": "Gauteng",
+        "bandwidthTotal": 4507.866666666667,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Portugal",
+        "geolocRegionName": "Setúbal",
+        "bandwidthTotal": 3296.266666666667,
+        "count": 3
+      },
+      {
+        "geolocCountryName": "Russia",
+        "geolocRegionName": "Penza Oblast",
+        "bandwidthTotal": 7093.866666666667,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Portugal",
+        "geolocRegionName": "Braga",
+        "bandwidthTotal": 3607.3333333333335,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Oklahoma",
+        "bandwidthTotal": 7026,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Turkey",
+        "geolocRegionName": "Samsun",
+        "bandwidthTotal": 5466.933333333333,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "China",
+        "geolocRegionName": "Zhejiang",
+        "bandwidthTotal": 134.93333333333334,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Japan",
+        "geolocRegionName": "Ōsaka",
+        "bandwidthTotal": 13489.066666666668,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "France",
+        "geolocRegionName": "Grand Est",
+        "bandwidthTotal": 8582.933333333332,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Colombia",
+        "geolocRegionName": "Atlántico",
+        "bandwidthTotal": 17019.2,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "France",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 6974.400000000001,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Angola",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 7998.4,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "India",
+        "geolocRegionName": "Telangana",
+        "bandwidthTotal": 188.53333333333333,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Netherlands",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 9562.800000000001,
+        "count": 2
+      },
+      {
+        "geolocCountryName": "Finland",
+        "geolocRegionName": "-",
+        "bandwidthTotal": 256.79999999999995,
+        "count": 2
+      }
+    ]
+  }
+}

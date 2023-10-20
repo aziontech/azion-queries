@@ -1,0 +1,65 @@
+query Top10StatusCodes {
+  httpEvents(
+    limit: 10
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {count: status}
+    groupBy: [status]
+    orderBy: [count_DESC]
+    )
+  {
+    status
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "status": 200,
+        "count": 97058010
+      },
+      {
+        "status": 400,
+        "count": 70094290
+      },
+      {
+        "status": 404,
+        "count": 56963910
+      },
+      {
+        "status": 302,
+        "count": 3834463
+      },
+      {
+        "status": 0,
+        "count": 2820133
+      },
+      {
+        "status": 499,
+        "count": 2170180
+      },
+      {
+        "status": 304,
+        "count": 1947576
+      },
+      {
+        "status": 201,
+        "count": 674429
+      },
+      {
+        "status": 500,
+        "count": 452352
+      },
+      {
+        "status": 429,
+        "count": 319671
+      }
+    ]
+  }
+}

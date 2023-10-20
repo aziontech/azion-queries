@@ -1,0 +1,425 @@
+query AverageRequestTimeByHost {
+  httpEvents(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {avg: requestTime} 
+    groupBy: [host]
+    orderBy: [avg_DESC]
+  )
+  {
+    host
+    avg
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "host": "adomain.net",
+        "avg": 123.379
+      },
+      {
+        "host": "adomain.net",
+        "avg": 123.086
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.724
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.622
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.395
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.365
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.352
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.201
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.723
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.701
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.674
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.634
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.535
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.392
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.381
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.375
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.329
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.324
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.289
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.278
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.275
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.265
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.262
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.243
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.242
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.239
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.225
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.224
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.222
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.221
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.217
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.209
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.204
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.203
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.199
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.197
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.197
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.185
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.179
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.174
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.174
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.173
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.169
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.168
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.159
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.159
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.158
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.156
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.156
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.154
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.146
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.142
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.136
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.135
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.134
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.134
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.128
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.126
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.126
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.126
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.124
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.123
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.123
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.122
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.12
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.117
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.116
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.115
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.115
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.115
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.114
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.113
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.111
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.111
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.109
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.107
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.105
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.102
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.102
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.1
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.099
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.099
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.099
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.098
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.097
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.095
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.094
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.094
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.093
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.093
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.091
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.091
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.09
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.09
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.088
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.087
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.085
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.085
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.083
+      },
+      {
+        "host": "adomain.net",
+        "avg": 121.083
+      }
+    ]
+  }
+}

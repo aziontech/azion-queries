@@ -1,0 +1,65 @@
+query Top10UserAgent {
+  httpEvents(
+    limit: 10
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {count: rows} 
+    groupBy: [httpUserAgent]
+    orderBy: [count_DESC]
+    )
+  {
+    httpUserAgent
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "httpUserAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Mobile Safari/537.36",
+        "count": 118368851
+      },
+      {
+        "httpUserAgent": "-",
+        "count": 76186325
+      },
+      {
+        "httpUserAgent": "okhttp/4.11.0",
+        "count": 72383018
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
+        "count": 66812245
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36",
+        "count": 58619330
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "count": 39179499
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+        "count": 19548656
+      },
+      {
+        "httpUserAgent": "MagaluApp/6.89.0 (br.com.magazineluiza; build:1; iOS 16.6.1) Alamofire/5.6.2",
+        "count": 19397617
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36",
+        "count": 18408468
+      },
+      {
+        "httpUserAgent": "ROI Hunter/Media Downloader; http://www.roihunter.com/",
+        "count": 15724479
+      }
+    ]
+  }
+}

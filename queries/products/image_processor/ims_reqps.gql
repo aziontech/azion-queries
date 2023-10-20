@@ -1,0 +1,21 @@
+query totalImagesProcessedRequestsPerSecond {
+  imagesProcessedMetrics(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      or: {
+          status: 304
+          statusRange: { begin: 200, end: 299 }
+      }
+    }
+    aggregate: {
+      rate: requests
+    }
+    groupBy:[ts]
+    orderBy:[ts_ASC]
+  )
+  {
+    ts
+    rate
+  }
+}

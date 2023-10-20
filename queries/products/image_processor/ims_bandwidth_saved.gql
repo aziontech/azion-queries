@@ -1,0 +1,14 @@
+query httpBandwidthImagesSaved {
+  httpMetrics(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+  )
+  {
+    ts
+    bandwidthImagesProcessedSavedData
+  }
+}

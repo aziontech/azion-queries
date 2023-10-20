@@ -1,0 +1,427 @@
+query Top10IPsBlocked {
+  httpEvents(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      wafLearningEq: "0"
+      wafBlockEq: "1"
+    }
+    aggregate: {count: rows} 
+    groupBy: [remoteAddress]
+    orderBy: [count_DESC]
+  )
+  {
+    remoteAddress
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 409
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 373
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 373
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 367
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 359
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 355
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 353
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 350
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 350
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 346
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 339
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 334
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 331
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 330
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 325
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 324
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 316
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 230
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 161
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 126
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 121
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 54
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 54
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 40
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 40
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 39
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 38
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 37
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 37
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 34
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 34
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 32
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 32
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 31
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 31
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 31
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 31
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 31
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 31
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 30
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 30
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 29
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 29
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 29
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 29
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 28
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 28
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 28
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 27
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 27
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 27
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 26
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 26
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 26
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 25
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 25
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 25
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 25
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 25
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 25
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 24
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 23
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 23
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 23
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 23
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 23
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 23
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 22
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 21
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 20
+      }
+    ]
+  }
+}

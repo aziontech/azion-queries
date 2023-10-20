@@ -1,12 +1,13 @@
 # Not Operator (WHERE NOT conditional)
 
-# The two conditions below will be negated, both the status and the geolocCountryName, returning all information 
-# that does not have a status of 200 and that they aren`t from Brazil or the United States.
+# The two conditions below will be negated: both the status and the geolocCountryName, returning all information 
+# that doesn't have a status of 200 and that isn't from Brazil or the United States.
+
 query StatusAndGeolocCountryNameNOT {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
       not: {
         status: 200
         geolocCountryNameIn: ["Brazil", "United States"]

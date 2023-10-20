@@ -1,0 +1,66 @@
+query Top10LocationWithoutUsaAndBrazil {
+  httpEvents(
+    limit: 10
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      geolocCountryNameNotIn: ["Brazil", "United States"]
+    }
+    aggregate: {count: rows} 
+    groupBy: [geolocCountryName]
+    orderBy: [count_DESC]
+  )
+  {
+    geolocCountryName
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "geolocCountryName": "United Kingdom",
+        "count": 5319103
+      },
+      {
+        "geolocCountryName": "Germany",
+        "count": 5254420
+      },
+      {
+        "geolocCountryName": "Ireland",
+        "count": 3920134
+      },
+      {
+        "geolocCountryName": "Netherlands",
+        "count": 2049504
+      },
+      {
+        "geolocCountryName": "Argentina",
+        "count": 1956390
+      },
+      {
+        "geolocCountryName": "France",
+        "count": 1859990
+      },
+      {
+        "geolocCountryName": "Australia",
+        "count": 1760074
+      },
+      {
+        "geolocCountryName": "Mexico",
+        "count": 1509751
+      },
+      {
+        "geolocCountryName": "Singapore",
+        "count": 1428364
+      },
+      {
+        "geolocCountryName": "Colombia",
+        "count": 1307589
+      }
+    ]
+  }
+}

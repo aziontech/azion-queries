@@ -1,0 +1,527 @@
+query TopByCache {
+  httpEvents(
+    limit: 100
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+       upstreamCacheStatusNe:"HIT" 
+    }
+    aggregate: {count: rows} 
+    groupBy: [requestUri, upstreamCacheStatus]
+    orderBy: [count_DESC]
+  )
+  {
+    requestUri
+    upstreamCacheStatus
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "requestUri": "-",
+        "upstreamCacheStatus": "-",
+        "count": 67212819
+      },
+      {
+        "requestUri": "/",
+        "upstreamCacheStatus": "-",
+        "count": 11652627
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 6888632
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 5518850
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 1416344
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 1263600
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 905269
+      },
+      {
+        "requestUri": "/anything",
+        "upstreamCacheStatus": "-",
+        "count": 823582
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 752698
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 691386
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 631899
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 631546
+      },
+      {
+        "requestUri": "/events/graphql",
+        "upstreamCacheStatus": "-",
+        "count": 526565
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 442357
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 276552
+      },
+      {
+        "requestUri": "/api/tokens",
+        "upstreamCacheStatus": "-",
+        "count": 259726
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 226583
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 219304
+      },
+      {
+        "requestUri": "/tokens",
+        "upstreamCacheStatus": "-",
+        "count": 215543
+      },
+      {
+        "requestUri": "/purge/url",
+        "upstreamCacheStatus": "-",
+        "count": 213558
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 208515
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 195120
+      },
+      {
+        "requestUri": "/login",
+        "upstreamCacheStatus": "-",
+        "count": 188218
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 183963
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 173505
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 148449
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 138300
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 127016
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 126860
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 126587
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 125522
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 124800
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 122358
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 118408
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 115701
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 112668
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 100586
+      },
+      {
+        "requestUri": "/metrics/graphql",
+        "upstreamCacheStatus": "-",
+        "count": 86805
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 84235
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 80297
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 75814
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 72660
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 69789
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 67749
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 67225
+      },
+      {
+        "requestUri": "/login/",
+        "upstreamCacheStatus": "-",
+        "count": 60533
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 60334
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 56719
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 56168
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 53977
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 52375
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 50553
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 46660
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 46470
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 46073
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 43365
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 43131
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 42373
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 40883
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 40585
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 37286
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "REVALIDATED",
+        "count": 36477
+      },
+      {
+        "requestUri": "/admin/",
+        "upstreamCacheStatus": "-",
+        "count": 35121
+      },
+      {
+        "requestUri": "/api/account/info",
+        "upstreamCacheStatus": "-",
+        "count": 34253
+      },
+      {
+        "requestUri": "/.env",
+        "upstreamCacheStatus": "-",
+        "count": 32088
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 30346
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 30111
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 29410
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 28050
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 27643
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 27191
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 26656
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 26393
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 26393
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 25960
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 25692
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 22126
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 21632
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 21238
+      },
+      {
+        "requestUri": "/admin",
+        "upstreamCacheStatus": "-",
+        "count": 21087
+      },
+      {
+        "requestUri": "/feed",
+        "upstreamCacheStatus": "-",
+        "count": 21049
+      },
+      {
+        "requestUri": "/variables",
+        "upstreamCacheStatus": "-",
+        "count": 20800
+      },
+      {
+        "requestUri": "/users/sign_in",
+        "upstreamCacheStatus": "-",
+        "count": 20606
+      },
+      {
+        "requestUri": "/console/",
+        "upstreamCacheStatus": "-",
+        "count": 20570
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 20094
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 19455
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 19169
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 19154
+      },
+      {
+        "requestUri": "/auth/login",
+        "upstreamCacheStatus": "-",
+        "count": 18737
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 18290
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 18255
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 17850
+      },
+      {
+        "requestUri": "/scripts/",
+        "upstreamCacheStatus": "-",
+        "count": 17477
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 17156
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 17075
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 16974
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 16966
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 16708
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 16583
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 16574
+      }
+    ]
+  }
+}
