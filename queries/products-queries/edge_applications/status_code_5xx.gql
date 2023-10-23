@@ -1,0 +1,17 @@
+query HttpCalculatedRequests5xxStatusCode {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    requestsStatusCode5xx
+    requestsStatusCode500
+    requestsStatusCode502
+    requestsStatusCode503
+  }
+}

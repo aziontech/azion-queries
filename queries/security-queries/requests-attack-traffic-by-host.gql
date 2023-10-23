@@ -1,0 +1,64 @@
+query RequestsAttackTraffic {
+  httpMetrics(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      wafLearningEq: "0"
+      wafBlockEq: "1"
+    }
+    groupBy: [ts, host]
+    orderBy: [ts_ASC]
+  )
+  {
+    ts
+    host
+    dataTransferredIn
+    dataTransferredOut
+    dataTransferredTotal
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1761,
+        "dataTransferredOut": 915,
+        "dataTransferredTotal": 2676
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 1340,
+        "dataTransferredOut": 213,
+        "dataTransferredTotal": 1553
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 5039,
+        "dataTransferredOut": 610,
+        "dataTransferredTotal": 5649
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3305,
+        "dataTransferredOut": 207914,
+        "dataTransferredTotal": 211219
+      },
+      {
+        "ts": "2023-09-20T10:11:00Z",
+        "host": "adomain.com",
+        "dataTransferredIn": 3526,
+        "dataTransferredOut": 87895,
+        "dataTransferredTotal": 91421
+      }
+    ]
+  }
+}

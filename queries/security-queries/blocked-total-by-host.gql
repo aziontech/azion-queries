@@ -1,0 +1,50 @@
+query RequestsBlockedXTotalByHost {
+  httpMetrics(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [host]
+    orderBy: [wafRequestsBlocked_DESC]
+  )
+  {
+    host
+    wafRequestsBlocked
+    edgeRequestsTotal
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      },
+      {
+        "host": "adomain.net",
+        "wafRequestsBlocked": 0,
+        "edgeRequestsTotal": 1
+      }
+    ]
+  }
+}

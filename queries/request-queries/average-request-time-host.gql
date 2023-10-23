@@ -1,0 +1,45 @@
+query AverageRequestTimeByHost {
+  httpEvents(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {avg: requestTime} 
+    groupBy: [host]
+    orderBy: [avg_DESC]
+  )
+  {
+    host
+    avg
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "host": "adomain.net",
+        "avg": 123.379
+      },
+      {
+        "host": "adomain.net",
+        "avg": 123.086
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.724
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.622
+      },
+      {
+        "host": "adomain.net",
+        "avg": 122.395
+      }
+    ]
+  }
+}

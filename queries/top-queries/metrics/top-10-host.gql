@@ -1,0 +1,51 @@
+query Top10HostAndYourTraffic {
+  httpMetrics(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {count: host}
+    groupBy: [host]
+    orderBy: [count_DESC]
+    ) 
+  {	
+    host
+    count
+    dataTransferredTotal
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "host": "adomain.com",
+        "count": 73243171,
+        "dataTransferredTotal": 43973873730148
+      },
+      {
+        "host": "adomain.com",
+        "count": 33062997,
+        "dataTransferredTotal": 35801655229882
+      },
+      {
+        "host": "adomain.com",
+        "count": 29271365,
+        "dataTransferredTotal": 38766018354693
+      },
+      {
+        "host": "adomain.com",
+        "count": 27647119,
+        "dataTransferredTotal": 41668227736288
+      },
+      {
+        "host": "adomain.com",
+        "count": 19516610,
+        "dataTransferredTotal": 3124748659458
+      }
+    ]
+  }
+}

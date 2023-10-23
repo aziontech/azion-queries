@@ -4,7 +4,7 @@ query Status304OrStatusRange200To299 {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
       or: {
           status: 304
           statusRange: {begin: 200, end: 299}

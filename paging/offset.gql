@@ -1,13 +1,14 @@
 # Offset Operator (LIMIT offset_value, limit_value)
 
-# The offset has a value of 0 if not specified. The maximum value for the offset is not restricted,
+# The offset has a value of 0 if not specified. The maximum value for the offset isn't restricted,
 # but it works in conjunction with the limit operator, which restricts the number of rows returned.
+
 query GeolocCountryNameOffset100{
   httpMetrics(
-    offset: 100  # In this example, we will retrieve data starting from row 100 up to row 150 (limit).
+    offset: 100  # In this example, we'll retrieve data starting from row 100 up to row 150 (limit).
     limit: 50
     filter: {
-      tsRange: {begin:"2023-03-22T17:03:00", end:"2023-03-22T18:05:00"}
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
     }
   ) 
   {        

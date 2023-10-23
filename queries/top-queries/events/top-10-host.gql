@@ -1,0 +1,45 @@
+query Top10Host {
+  httpMetrics(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {count: host}
+    groupBy: [host]
+    orderBy: [count_DESC]
+    ) 
+  {	
+    host
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "host": "adomain.com",
+        "count": 87185220
+      },
+      {
+        "host": "adomain.com",
+        "count": 45762651
+      },
+      {
+        "host": "adomain.com",
+        "count": 17813655
+      },
+      {
+        "host": "adomain.com",
+        "count": 6605902
+      },
+      {
+        "host": "adomain.com",
+        "count": 3257228
+      }
+    ]
+  }
+}

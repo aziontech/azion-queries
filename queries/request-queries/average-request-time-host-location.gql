@@ -1,0 +1,57 @@
+query AverageRequestTimeByHostAndLocation {
+  httpEvents(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    aggregate: {avg: requestTime} 
+    groupBy: [host, geolocCountryName, geolocRegionName]
+    orderBy: [avg_DESC]
+  )
+  {
+    host
+    geolocCountryName
+    geolocRegionName
+    avg
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "host": "adomain.net",
+        "geolocCountryName": "United States",
+        "geolocRegionName": "Oregon",
+        "avg": 374.572
+      },
+      {
+        "host": "adomain.net",
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Santa Catarina",
+        "avg": 224.33
+      },
+      {
+        "host": "adomain.net",
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Santa Catarina",
+        "avg": 222.908
+      },
+      {
+        "host": "adomain.net",
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Santa Catarina",
+        "avg": 195.766
+      },
+      {
+        "host": "adomain.net",
+        "geolocCountryName": "Brazil",
+        "geolocRegionName": "Rio Grande do Sul",
+        "avg": 189.937
+      }
+    ]
+  }
+}

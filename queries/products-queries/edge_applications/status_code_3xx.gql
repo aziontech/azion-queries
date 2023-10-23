@@ -1,0 +1,17 @@
+query HttpCalculatedRequests3xxStatusCode {
+  httpMetrics(
+    limit: 1000
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+    requestsStatusCode3xx
+    requestsStatusCode301
+    requestsStatusCode302
+    requestsStatusCode304
+  }
+}

@@ -1,0 +1,52 @@
+query TopByCacheAndUri {
+  httpEvents(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+       upstreamCacheStatusNe:"HIT" 
+    }
+    aggregate: {count: rows} 
+    groupBy: [requestUri, upstreamCacheStatus]
+    orderBy: [count_DESC]
+  )
+  {
+    requestUri
+    upstreamCacheStatus
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "requestUri": "-",
+        "upstreamCacheStatus": "-",
+        "count": 67212819
+      },
+      {
+        "requestUri": "/",
+        "upstreamCacheStatus": "-",
+        "count": 11652627
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 6888632
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "-",
+        "count": 5518850
+      },
+      {
+        "requestUri": "/example?uri=true",
+        "upstreamCacheStatus": "MISS",
+        "count": 1416344
+      }
+    ]
+  }
+}

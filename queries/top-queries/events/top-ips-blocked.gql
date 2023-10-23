@@ -1,0 +1,47 @@
+query Top10IPsBlocked {
+  httpEvents(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      wafLearningEq: "0"
+      wafBlockEq: "1"
+    }
+    aggregate: {count: rows} 
+    groupBy: [remoteAddress]
+    orderBy: [count_DESC]
+  )
+  {
+    remoteAddress
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 409
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 373
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 373
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 367
+      },
+      {
+        "remoteAddress": "170.000.00.00",
+        "count": 359
+      }
+    ]
+  }
+}

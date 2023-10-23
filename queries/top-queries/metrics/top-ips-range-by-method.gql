@@ -1,0 +1,62 @@
+query TopIPsRangeByMethod {
+  httpMetrics(
+    limit: 5
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [remoteAddressClass]
+    orderBy: [requestsHttpMethodGet_DESC, requestsHttpMethodPost_DESC, requestsHttpMethodHead_DESC, requestsHttpMethodOthers_DESC]
+  )
+  {
+    remoteAddressClass
+    requestsHttpMethodGet
+    requestsHttpMethodPost
+    requestsHttpMethodHead
+    requestsHttpMethodOthers
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpMetrics": [
+      {
+        "remoteAddressClass": "170.000.000.0/21",
+        "requestsHttpMethodGet": 7307085,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 2661
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 2678799,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 181
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 1593530,
+        "requestsHttpMethodPost": 166,
+        "requestsHttpMethodHead": 12,
+        "requestsHttpMethodOthers": 174
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/21",
+        "requestsHttpMethodGet": 1253677,
+        "requestsHttpMethodPost": 0,
+        "requestsHttpMethodHead": 0,
+        "requestsHttpMethodOthers": 1492
+      },
+      {
+        "remoteAddressClass": "170.000.000.0/15",
+        "requestsHttpMethodGet": 1112659,
+        "requestsHttpMethodPost": 105367,
+        "requestsHttpMethodHead": 6350,
+        "requestsHttpMethodOthers": 42924
+      }
+    ]
+  }
+}
