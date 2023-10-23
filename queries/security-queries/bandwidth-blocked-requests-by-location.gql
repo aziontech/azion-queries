@@ -6,7 +6,6 @@ query BandwidthAndBlockedRequestsLocation {
       # blockeds
       wafLearningEq: "0"
       wafBlockEq: "1"
-      # naxsiAttackActionEq: "$BLOCK"
     }
     aggregate: {count: rows} 
     groupBy: [geolocCountryName, geolocRegionName]

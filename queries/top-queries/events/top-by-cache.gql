@@ -1,4 +1,4 @@
-query TopByCache {
+query TopByCacheAndUri {
   httpEvents(
     limit: 100
     filter: {

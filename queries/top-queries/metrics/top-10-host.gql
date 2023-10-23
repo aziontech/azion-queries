@@ -1,4 +1,4 @@
-query Top10Host {
+query Top10HostAndYourTraffic {
   httpMetrics(
     limit: 10
     filter: {

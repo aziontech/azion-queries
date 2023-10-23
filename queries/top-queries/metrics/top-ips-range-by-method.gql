@@ -9,7 +9,7 @@ query TopIPsRangeByMethod {
   )
   {
     remoteAddressClass
-		requestsHttpMethodGet
+    requestsHttpMethodGet
     requestsHttpMethodPost
     requestsHttpMethodHead
     requestsHttpMethodOthers

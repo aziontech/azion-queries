@@ -9,7 +9,7 @@ query RequestsBlockedXTotalByHost {
   )
   {
     host
-		wafRequestsBlocked
+    wafRequestsBlocked
     edgeRequestsTotal
   }
 }
