@@ -1,6 +1,6 @@
 query Top10HostsThreats {
   httpEvents(
-    limit: 100
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
       # threats
@@ -42,22 +42,6 @@ query Top10HostsThreats {
       {
         "host": "adomain.com",
         "count": 9102
-      },
-      {
-        "host": "adomain.com",
-        "count": 1142
-      },
-      {
-        "host": "adomain.com",
-        "count": 912
-      },
-      {
-        "host": "adomain.com",
-        "count": 577
-      },
-      {
-        "host": "adomain.com",
-        "count": 181
       }
     ]
   }

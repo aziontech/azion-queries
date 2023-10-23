@@ -1,6 +1,6 @@
 query TopBlockedRequestTime {
   httpEvents(
-    limit: 10
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
       wafLearningEq: "0"
@@ -51,36 +51,6 @@ query TopBlockedRequestTime {
         "remoteAddress": "187.44.229.154",
         "status": 200,
         "requestTime": "2.025"
-      },
-      {
-        "requestId": "9559c06701a0c18dfa0a7fae830a0112",
-        "remoteAddress": "187.44.229.154",
-        "status": 200,
-        "requestTime": "2.024"
-      },
-      {
-        "requestId": "860be419df6970a372c02327a3573d0e",
-        "remoteAddress": "168.205.63.77",
-        "status": 400,
-        "requestTime": "1.961"
-      },
-      {
-        "requestId": "639b1c6be0b6473059bc525e22f2f506",
-        "remoteAddress": "138.185.147.190",
-        "status": 200,
-        "requestTime": "1.922"
-      },
-      {
-        "requestId": "263312899e7431537e3636212aa5caed",
-        "remoteAddress": "179.251.241.166",
-        "status": 400,
-        "requestTime": "1.769"
-      },
-      {
-        "requestId": "09d003f0dd310732f2232091d019a180",
-        "remoteAddress": "138.118.85.120",
-        "status": 400,
-        "requestTime": "1.711"
       }
     ]
   }

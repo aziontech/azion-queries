@@ -1,6 +1,6 @@
 query Top10StatusCodes {
   httpEvents(
-    limit: 10
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
     }
@@ -39,26 +39,6 @@ query Top10StatusCodes {
       {
         "status": 0,
         "count": 2820133
-      },
-      {
-        "status": 499,
-        "count": 2170180
-      },
-      {
-        "status": 304,
-        "count": 1947576
-      },
-      {
-        "status": 201,
-        "count": 674429
-      },
-      {
-        "status": 500,
-        "count": 452352
-      },
-      {
-        "status": 429,
-        "count": 319671
       }
     ]
   }

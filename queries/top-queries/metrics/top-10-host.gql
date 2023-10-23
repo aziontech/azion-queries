@@ -1,6 +1,6 @@
 query Top10HostAndYourTraffic {
   httpMetrics(
-    limit: 10
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
     }
@@ -45,31 +45,6 @@ query Top10HostAndYourTraffic {
         "host": "adomain.com",
         "count": 19516610,
         "dataTransferredTotal": 3124748659458
-      },
-      {
-        "host": "adomain.com",
-        "count": 15346318,
-        "dataTransferredTotal": 8671246637732
-      },
-      {
-        "host": "adomain.com",
-        "count": 14123589,
-        "dataTransferredTotal": 361930033232
-      },
-      {
-        "host": "adomain.com",
-        "count": 13072342,
-        "dataTransferredTotal": 502784504237
-      },
-      {
-        "host": "adomain.com",
-        "count": 12250524,
-        "dataTransferredTotal": 28443527751333
-      },
-      {
-        "host": "adomain.com",
-        "count": 11844087,
-        "dataTransferredTotal": 5972240444397
       }
     ]
   }

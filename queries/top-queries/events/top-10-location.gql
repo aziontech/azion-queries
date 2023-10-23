@@ -1,6 +1,6 @@
 query Top10LocationWithoutUsaAndBrazil {
   httpEvents(
-    limit: 10
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
       geolocCountryNameNotIn: ["Brazil", "United States"]
@@ -40,26 +40,6 @@ query Top10LocationWithoutUsaAndBrazil {
       {
         "geolocCountryName": "Argentina",
         "count": 1956390
-      },
-      {
-        "geolocCountryName": "France",
-        "count": 1859990
-      },
-      {
-        "geolocCountryName": "Australia",
-        "count": 1760074
-      },
-      {
-        "geolocCountryName": "Mexico",
-        "count": 1509751
-      },
-      {
-        "geolocCountryName": "Singapore",
-        "count": 1428364
-      },
-      {
-        "geolocCountryName": "Colombia",
-        "count": 1307589
       }
     ]
   }

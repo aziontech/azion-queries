@@ -1,6 +1,6 @@
 query Top10Host {
   httpMetrics(
-    limit: 10
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
     }
@@ -39,26 +39,6 @@ query Top10Host {
       {
         "host": "adomain.com",
         "count": 3257228
-      },
-      {
-        "host": "adomain.com",
-        "count": 3101227
-      },
-      {
-        "host": "adomain.com",
-        "count": 2657508
-      },
-      {
-        "host": "adomain.com",
-        "count": 1663239
-      },
-      {
-        "host": "adomain.com",
-        "count": 1464293
-      },
-      {
-        "host": "adomain.com",
-        "count": 1396280
       }
     ]
   }

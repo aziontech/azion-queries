@@ -1,6 +1,6 @@
 query TotalAttacksWAFAndTotalBytesSentByHost {
   httpMetrics(
-    limit: 10,
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
     }
@@ -44,31 +44,6 @@ query TotalAttacksWAFAndTotalBytesSentByHost {
         "host": "adomain.com",
         "wafRequestsThreat": 374418,
         "bytes": 3196861431
-      },
-      {
-        "host": "adomain.com",
-        "wafRequestsThreat": 94934,
-        "bytes": 23464498632
-      },
-      {
-        "host": "adomain.com",
-        "wafRequestsThreat": 23114,
-        "bytes": 199542949
-      },
-      {
-        "host": "adomain.com",
-        "wafRequestsThreat": 20612,
-        "bytes": 5112651104
-      },
-      {
-        "host": "adomain.com",
-        "wafRequestsThreat": 5093,
-        "bytes": 159001034
-      },
-      {
-        "host": "adomain.com",
-        "wafRequestsThreat": 2645,
-        "bytes": 8434122785
       }
     ]
   }

@@ -1,6 +1,6 @@
 query Top10IPs {
   httpEvents(
-    limit: 10
+    limit: 5
     filter: {
       tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
     }
@@ -38,26 +38,6 @@ query Top10IPs {
       {
         "remoteAddress": "170.000.00.00",
         "count": 3500580
-      },
-      {
-        "remoteAddress": "170.000.00.00",
-        "count": 2702862
-      },
-      {
-        "remoteAddress": "170.000.00.00",
-        "count": 2470692
-      },
-      {
-        "remoteAddress": "170.000.00.00",
-        "count": 1931222
-      },
-      {
-        "remoteAddress": "170.000.00.00",
-        "count": 1824362
-      },
-      {
-        "remoteAddress": "170.000.00.00",
-        "count": 1610541
       }
     ]
   }
