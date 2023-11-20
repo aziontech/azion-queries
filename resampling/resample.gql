@@ -20,8 +20,8 @@ query HttpWithResample {
   ) 
   {        
     ts
-   	dataTransferredIn
-  	dataTransferredOut
+    dataTransferredIn
+    dataTransferredOut
     dataTransferredTotal
   }
 }
