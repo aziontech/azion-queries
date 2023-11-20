@@ -1,0 +1,27 @@
+# Resample Operator
+
+# To resample the data, it's necessary that the `ts` field is included in the group_by of your query
+# and also in the selected fields to return data.
+
+# Currently, the resample operation is only supported in the datasets from `/metrics/graphql`.
+
+query HttpWithResample {
+  httpMetrics(
+    limit: 10000
+    resample: {
+      function: sum  # Available options: sum, mean, max, min
+      points: 250  # Number of points to return in the resampled data (optional)
+    }
+    filter: {
+      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+    }
+    groupBy: [ts]
+    orderBy: [ts_ASC]
+  ) 
+  {        
+    ts
+   	dataTransferredIn
+  	dataTransferredOut
+    dataTransferredTotal
+  }
+}
