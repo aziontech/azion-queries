@@ -4,7 +4,7 @@ query StatusLessThan400 {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
       statusLt: 400
     }
     orderBy: [ts_ASC]

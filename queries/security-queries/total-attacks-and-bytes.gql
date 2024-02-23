@@ -2,7 +2,7 @@ query TotalAttacksWAFAndTotalBytesSentByHost {
   httpMetrics(
     limit: 5
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
     }
     aggregate: {sum: bytesSent},
     groupBy: [host]

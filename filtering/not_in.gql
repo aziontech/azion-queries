@@ -4,7 +4,7 @@ query StatusNotIN {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
       statusNotIn: [301, 302, 403]
     }
     orderBy: [ts_ASC]

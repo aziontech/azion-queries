@@ -4,7 +4,7 @@ query Status200AndStatusRange300To399 {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
       and: {
           status: 200
           statusRange: {begin: 300, end: 399}

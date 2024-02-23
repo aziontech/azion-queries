@@ -7,7 +7,7 @@ query GeolocCountryNameLimit50{
     offset: 0
     limit: 50  # In this example, we'll retrieve data from row 0 to row 50.
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
     }
   ) 
   {        

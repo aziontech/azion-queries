@@ -2,7 +2,7 @@ query totalImagesProcessedRequestsPerSecond {
   imagesProcessedMetrics(
     limit: 100
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
       or: {
           status: 304
           statusRange: { begin: 200, end: 299 }
