@@ -4,7 +4,7 @@ query GeolocCountryNameAndRegionNameLike {
   httpMetrics(
     limit: 1000
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
       geolocCountryNameLike: "Braz%"  # Any string that starts with the characters
       geolocRegionNameLike: "%ao Paulo"  # # Any string that ends with the characters.
       schemeLike: "%ttp%"  # Any string that contains the characters.

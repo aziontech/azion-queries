@@ -2,7 +2,7 @@ query TopIPsRangeByMethod {
   httpMetrics(
     limit: 5
     filter: {
-      tsRange: {begin:"xxxx-xx-xxTxx:xx:xx", end:"xxxx-xx-xxTxx:xx:xx"}
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
     }
     groupBy: [remoteAddressClass]
     orderBy: [requestsHttpMethodGet_DESC, requestsHttpMethodPost_DESC, requestsHttpMethodHead_DESC, requestsHttpMethodOthers_DESC]
