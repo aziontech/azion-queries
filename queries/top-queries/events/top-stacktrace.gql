@@ -1,0 +1,64 @@
+query TopStacktrace {
+  httpEvents(
+    limit: 5
+    filter: {
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
+      statusIn: [403]
+    }
+    aggregate: {count: httpUserAgent} 
+    groupBy: [httpUserAgent, geolocCountryName, status, stacktrace]
+    orderBy: [count_DESC]
+    )
+  {
+    httpUserAgent
+    geolocCountryName
+    status
+    stacktrace
+    count
+  }
+}
+
+
+## Example response
+
+{
+  "data": {
+    "httpEvents": [
+      {
+        "httpUserAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36",
+        "geolocCountryName": "Brazil",
+        "status": 403,
+        "stacktrace": "{\\\"edge_firewall\\\":[\\\"URI\\\"]}",
+        "count": 15530304
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36",
+        "geolocCountryName": "Brazil",
+        "status": 403,
+        "stacktrace": "{\\\"edge_firewall\\\":[\\\"URI\\\"]}",
+        "count": 6654458
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/24.0 Chrome/117.0.0.0 Mobile Safari/537.36",
+        "geolocCountryName": "Brazil",
+        "status": 403,
+        "stacktrace": "{\\\"edge_firewall\\\":[\\\"URI\\\"]}",
+        "count": 2175799
+      },
+      {
+        "httpUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+        "geolocCountryName": "Brazil",
+        "status": 403,
+        "stacktrace": "{\\\"edge_firewall\\\":[\\\"Deny List\\\"]}",
+        "count": 1180596
+      },
+      {
+        "httpUserAgent": "Java/11.0.19",
+        "geolocCountryName": "United States",
+        "status": 403,
+        "stacktrace": "{\\\"edge_firewall\\\":[\\\"Deny Bots\\\"]}",
+        "count": 1029746
+      }
+    ]
+  }
+}
