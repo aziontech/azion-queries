@@ -1,0 +1,16 @@
+query WafEventsTopPaths {
+  paths: httpEvents(
+    limit: 10000
+    filter: {
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
+      wafMatchLike: "%RULE_ID%"
+      hostIn: [ "HOST" ]
+    }
+    aggregate:{count:rows}
+    groupBy: [requestUri]
+    orderBy: [count_DESC]
+  ) {
+    path: requestUri
+    hits: count
+  }
+}

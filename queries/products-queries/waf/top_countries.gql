@@ -1,0 +1,17 @@
+query WafEventsTopCountries {
+  countries: httpEvents(
+    limit: 10000
+    filter: {
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
+      wafMatchLike: "%RULE_ID%"
+      hostIn: [ "HOST" ]
+    }
+    aggregate:{count:rows}
+    groupBy: [geolocCountryName]
+    orderBy: [geolocCountryName_ASC]
+  )
+  {
+    country: geolocCountryName
+    hits: count
+  }
+}

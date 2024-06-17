@@ -1,0 +1,16 @@
+query WafEventsTunning {
+  hits: httpEvents(
+    limit: 10000
+    filter: {
+      tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}
+      
+      hostIn: [ "sso.azion.com" ]
+    } 
+    aggregate:{count:rows}
+    groupBy: [wafMatch]
+  )
+  {
+    match: wafMatch
+    value : count
+  }
+}
