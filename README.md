@@ -18,6 +18,8 @@ Sample queries to be used on Azion GraphQL API. You can test these queries on:
 - https://api.azionapi.net/accounting/graphql
 - https://api.azionapi.net/consumption/graphql
 
+> Read more about the Azion GraphQL API and how to use it in the [documentation](https://www.azion.com/en/documentation/devtools/graphql-api/overview/).
+
 ## Adding timestamp
 
 To correctly execute a query, you must add a timestamp. On the example queries, you'll find a placeholder for the **tsRange** field with `tsRange: {begin:"yyyy-mm-ddThh:mm:ss", end:"yyyy-mm-ddThh:mm:ss"}`, representing the date and time format. Replace all placeholders with the proper dates and time you want to query. For example:
