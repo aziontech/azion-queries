@@ -4,8 +4,8 @@ Sample queries to be used on Azion GraphQL API. You can test these queries on:
 
 **Azion Playground**
 
-- [https://manager.azion.com/metrics/graphql](https://manager.azion.com/metrics/graphql)
-- [https://manager.azion.com/events/graphql](https://manager.azion.com/events/graphql)
+- [https://api.azionapi.com/v4/metrics/graphql](https://api.azion.com/v4/metrics/graphql)
+- [https://api.azionapi.com/v4/events/graphql](https://api.azion.com/v4/events/graphql)
 
 **GraphQL API**
 
