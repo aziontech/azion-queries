@@ -4,19 +4,19 @@ Sample queries to be used on Azion GraphQL API. You can test these queries on:
 
 **Azion Playground**
 
-- [https://manager.azion.com/metrics/graphql](https://manager.azion.com/metrics/graphql)
-- [https://manager.azion.com/events/graphql](https://manager.azion.com/events/graphql)
-- [https://manager.azion.com/billing/graphql](https://manager.azion.com/billing/graphql)
-- [https://manager.azion.com/accounting/graphql](https://manager.azion.com/accounting/graphql)
-- [https://manager.azion.com/consumption/graphql](https://manager.azion.com/consumption/graphql)
+- [https://api.azion.com/v4/metrics/graphql](https://api.azion.com/v4/metrics/graphql)
+- [https://api.azion.com/v4/events/graphql](https://api.azion.com/v4/events/graphql)
+- [https://api.azion.com/v4/billing/graphql](https://api.azion.com/v4/billing/graphql)
+- [https://api.azion.com/v4/accounting/graphql](https://api.azion.com/v4/accounting/graphql)
+- [https://api.azion.com/v4/consumption/graphql](https://api.azion.com/v4/consumption/graphql)
 
 **GraphQL API**
 
-- https://api.azionapi.net/metrics/graphql
-- https://api.azionapi.net/events/graphql
-- https://api.azionapi.net/billing/graphql
-- https://api.azionapi.net/accounting/graphql
-- https://api.azionapi.net/consumption/graphql
+- https://api.azion.com/v4/metrics/graphql
+- https://api.azion.com/v4/events/graphql
+- https://api.azion.com/v4/billing/graphql
+- https://api.azion.com/v4/accounting/graphql
+- https://api.azion.com/v4/consumption/graphql
 
 > Read more about the Azion GraphQL API and how to use it in the [documentation](https://www.azion.com/en/documentation/devtools/graphql-api/overview/).
 
