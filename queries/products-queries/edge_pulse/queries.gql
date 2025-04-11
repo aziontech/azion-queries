@@ -1,0 +1,88 @@
+#############################################################################
+#                                                                           #
+#                               EDGE PULSE                                  #
+#                                                                           #
+#############################################################################
+
+# SAMPLE QUERY
+
+query EdgePulse(
+	$tsRange_begin: DateTime!
+	$tsRange_end: DateTime!
+) {
+	edgePulseEvents (
+		limit: 1000
+		orderBy: [ts_DESC]
+		filter: {
+			tsRange: { begin: $tsRange_begin, end: $tsRange_end }
+		}
+	) {
+		ts
+        clientId
+        scriptid
+        platform
+        referrer
+        locationhref
+        useragent
+        type
+        browser
+        rtt
+        downlink
+        effectivetype
+        typebackforward
+        typereserved
+        typenavigate
+        contentdownload
+        ssl
+        networkduration
+        tcp
+        rendertime
+        dns
+        redirectcount
+        navtype
+        typereload
+        ttfb
+        pageloadtime
+        typenavigate
+	}
+}
+# VARIABLES
+
+{"tsRange_begin":"2025-04-11T14:46:23","tsRange_end":"2025-04-11T14:51:11"}
+
+# EXAMPLE RESPONSE
+
+{
+  "data": {
+    "edgePulseEvents": [
+      {
+        "ts": "2025-04-11T14:51:11Z",
+        "clientId": "1234a",
+        "scriptid": "1234a",
+        "platform": "Linux armv8l",
+        "referrer": "",
+        "locationhref": "https://www.blablabla.com.br/busca?q=%blabla",
+        "useragent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.165 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "type": "navigation",
+        "browser": "a6b03c97-c009-4b6b-bd74-6b80d8e8abee",
+        "rtt": 0,
+        "downlink": 10,
+        "effectivetype": "4g",
+        "typebackforward": 2,
+        "typereserved": 1,
+        "typenavigate": 0,
+        "contentdownload": 0,
+        "ssl": 0,
+        "networkduration": 1,
+        "tcp": 0,
+        "rendertime": 130,
+        "dns": 0,
+        "redirectcount": 0,
+        "navtype": 0,
+        "typereload": 1,
+        "ttfb": 1,
+        "pageloadtime": 130
+      }
+    ]
+  }
+}
